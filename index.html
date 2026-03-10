@@ -30,10 +30,10 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -92,10 +92,15 @@
             </div>
         </div>
         <div class="hero-visual animate-up delay-3">
-            <div class="neural-network" id="neuralNetwork">
-                <svg viewBox="0 0 400 400" class="nn-svg">
-                    <!-- Neural network nodes and connections drawn by JS -->
-                </svg>
+            <div class="hero-image-wrapper">
+                <div class="hero-image-glow"></div>
+                <div class="hero-image-ring"></div>
+                <div class="hero-image-ring hero-image-ring--outer"></div>
+                <img src="IMG_9446.jpeg" alt="Ahmed Abdelgwad — AI & NLP Engineer" class="hero-image">
+                <!-- Decorative floating tech badges -->
+                <span class="hero-float-badge hero-float-badge--1"><i class="fas fa-brain"></i></span>
+                <span class="hero-float-badge hero-float-badge--2"><i class="fas fa-robot"></i></span>
+                <span class="hero-float-badge hero-float-badge--3"><i class="fas fa-microchip"></i></span>
             </div>
         </div>
         <a href="#about" class="scroll-indicator">
@@ -222,6 +227,31 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">&lt;education&gt;</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-card reveal">
+                <div class="edu-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="edu-content">
+                    <h3>Bachelor's Degree in Computer Science & Artificial Intelligence</h3>
+                    <h4>Pharos University in Alexandria</h4>
+                    <div class="edu-meta">
+                        <span><i class="fas fa-calendar"></i> 2022 – 2026</span>
+                        <span><i class="fas fa-chart-line"></i> Grade: Very Good</span>
+                        <span><i class="fas fa-hourglass-half"></i> Expected Graduation: 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section class="section section-alt" id="experience">
         <div class="container">
@@ -319,16 +349,16 @@
                             <i class="fas fa-robot"></i>
                         </div>
                         <div class="project-links">
-                            <span class="project-badge-label">Robotics + AI</span>
+                            <a href="https://github.com/ahmedabdelgwad1/rag.git" target="_blank"
+                                class="project-badge-label grad-badge" style="text-decoration:none;">
+                                <i class="fab fa-github"></i> Graduation Project
+                            </a>
                         </div>
                     </div>
                     <h3 class="project-title">Interactive AI Tourist Robot</h3>
-                    <p class="project-subtitle">RoboMuse</p>
                     <p class="project-description">
-                        Orchestrated the AI module development for an autonomous museum guide,
-                        implementing Large Language Models (LLMs) and RAG systems to facilitate
-                        high-accuracy, context-aware visitor interactions, while integrating
-                        Computer Vision for seamless navigation.
+                        An intelligent interactive AI tourist robot featuring a robust
+                        Retrieval-Augmented Generation (RAG) system to assist and guide users.
                     </p>
                     <div class="project-tech">
                         <span>Python</span>
@@ -348,19 +378,21 @@
                             <i class="fas fa-database"></i>
                         </div>
                         <div class="project-links">
-                            <span class="project-badge-label">RAG System</span>
+                            <a href="https://github.com/ahmedabdelgwad1/ragqa.git" target="_blank"
+                                class="project-badge-label" style="text-decoration:none;">
+                                <i class="fab fa-github"></i> RAG System
+                            </a>
                         </div>
                     </div>
-                    <h3 class="project-title">RAG-based Question Answering System</h3>
+                    <h3 class="project-title">RAG Q&A System</h3>
                     <p class="project-description">
-                        Engineered a context-aware QA system leveraging Retrieval-Augmented Generation (RAG)
-                        by integrating Google Gemini API with LangChain and optimizing vector data retrieval
-                        using ChromaDB.
+                        An advanced Question Answering system built using Large Language Models
+                        (LLMs) and NLP techniques.
                     </p>
                     <div class="project-tech">
                         <span>LangChain</span>
-                        <span>Gemini API</span>
-                        <span>ChromaDB</span>
+                        <span>LLMs</span>
+                        <span>NLP</span>
                         <span>Transformers</span>
                     </div>
                 </div>
@@ -370,23 +402,29 @@
                     <div class="project-glow"></div>
                     <div class="project-header">
                         <div class="project-icon">
-                            <i class="fas fa-file-alt"></i>
+                            <i class="fas fa-leaf"></i>
                         </div>
                         <div class="project-links">
-                            <span class="project-badge-label grad-badge">Graduation Project</span>
+                            <a href="https://github.com/ahmedabdelgwad1/final_plant.git" target="_blank"
+                                class="project-badge-label" style="text-decoration:none;">
+                                <i class="fab fa-github"></i> Multi-Agent AI
+                            </a>
                         </div>
                     </div>
-                    <h3 class="project-title">Text Summarization System</h3>
+                    <h3 class="project-title">Plant Disease Diagnosis Expert System</h3>
                     <p class="project-description">
-                        Developed an automated summarization pipeline utilizing BART/T5 Transformer models,
-                        fine-tuned on large datasets to improve fluency and evaluated using ROUGE metrics.
+                        An advanced Multi-Agent AI pipeline built with LangGraph. It uses Vision
+                        LLMs to analyze leaf images, ChromaDB for RAG-based symptom matching, and
+                        external APIs (PlantNet, Tavily) for validation. Developed using Clean
+                        Architecture.
                     </p>
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>PyTorch</span>
-                        <span>Hugging Face</span>
-                        <span>BART</span>
-                        <span>T5</span>
+                        <span>LangGraph</span>
+                        <span>Vision LLMs</span>
+                        <span>ChromaDB</span>
+                        <span>RAG</span>
+                        <span>PlantNet API</span>
+                        <span>Clean Architecture</span>
                     </div>
                 </div>
             </div>
@@ -478,31 +516,6 @@
                         <div class="skill-chip soft">Communication</div>
                         <div class="skill-chip soft">Time Management</div>
                         <div class="skill-chip soft">Adaptability</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section" id="education">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">&lt;education&gt;</span>
-                <h2 class="section-title">Education</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="education-card reveal">
-                <div class="edu-icon">
-                    <i class="fas fa-university"></i>
-                </div>
-                <div class="edu-content">
-                    <h3>Bachelor's Degree in Computer Science & Artificial Intelligence</h3>
-                    <h4>Pharos University in Alexandria</h4>
-                    <div class="edu-meta">
-                        <span><i class="fas fa-calendar"></i> 2022 – 2026</span>
-                        <span><i class="fas fa-chart-line"></i> Grade: Very Good</span>
-                        <span><i class="fas fa-hourglass-half"></i> Expected Graduation: 2026</span>
                     </div>
                 </div>
             </div>
