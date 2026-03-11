@@ -255,7 +255,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function initChatWidget() {
 
     // ── Config ──────────────────────────────────────────────────────────────
-    const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    // Treat file://, localhost, and 127.0.0.1 all as local dev
+    const IS_LOCAL = location.protocol === 'file:'
+        || location.hostname === 'localhost'
+        || location.hostname === '127.0.0.1';
     const HF_URL = 'https://ahmed3182004-portflio.hf.space';
     const API_URL = (IS_LOCAL ? 'http://localhost:8000' : HF_URL) + '/chat';
 
@@ -388,12 +391,10 @@ function initChatWidget() {
             appendMessage('ai', data.response);
 
         } catch (error) {
-            appendMessage('ai',
-                `⚠️ Couldn't reach the assistant right now.\n\n` +
-                `Make sure the backend is running:\n` +
-                `uvicorn main:app --reload\n\n` +
-                `Error: ${error.message}`
-            );
+            const hint = IS_LOCAL
+                ? 'شغّل الـ backend الأول:\n\nuvicorn main:app --reload'
+                : 'الـ Hugging Face Space ممكن يكون لسه بيتبنى.\nانتظر دقيقة وحاول تاني.';
+            appendMessage('ai', `⚠️ تعذّر الاتصال بالمساعد.\n\n${hint}\n\nError: ${error.message}`);
         } finally {
             setLoading(false);
             scrollToBottom();
