@@ -252,7 +252,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    FastAPI + Groq + LangChain RAG
    ============================================= */
 
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
     // ── Config ──────────────────────────────────────────────────────────────
@@ -422,4 +422,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // ── Init ─────────────────────────────────────────────────────────────────
     showWelcome();
 
-})();
+});
