@@ -256,10 +256,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     'use strict';
 
     // ── Config ──────────────────────────────────────────────────────────────
-    // Local dev → localhost | GitHub Pages / production → Render URL
+    // Local dev → localhost | GitHub Pages / production → Hugging Face Spaces URL
     const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-    const RENDER_URL = 'https://ahmed-portfolio-ai.onrender.com'; // ← غيّرها برابط Render بتاعك
-    const API_URL = (IS_LOCAL ? 'http://localhost:8000' : RENDER_URL) + '/chat';
+    const HF_URL = 'https://ahmed3182004-portflio.hf.space'; // Hugging Face Space API URL
+    const API_URL = (IS_LOCAL ? 'http://localhost:8000' : HF_URL) + '/chat';
 
     // ── DOM refs ─────────────────────────────────────────────────────────────
     const bubble = document.getElementById('aiChatBubble');
