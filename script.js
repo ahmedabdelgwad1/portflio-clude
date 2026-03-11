@@ -252,13 +252,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    FastAPI + Groq + LangChain RAG
    ============================================= */
 
-document.addEventListener('DOMContentLoaded', function () {
-    'use strict';
+function initChatWidget() {
 
     // ── Config ──────────────────────────────────────────────────────────────
-    // Local dev → localhost | GitHub Pages / production → Hugging Face Spaces URL
     const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-    const HF_URL = 'https://ahmed3182004-portflio.hf.space'; // Hugging Face Space API URL
+    const HF_URL = 'https://ahmed3182004-portflio.hf.space';
     const API_URL = (IS_LOCAL ? 'http://localhost:8000' : HF_URL) + '/chat';
 
     // ── DOM refs ─────────────────────────────────────────────────────────────
@@ -270,6 +268,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputEl = document.getElementById('chatInput');
     const sendBtn = document.getElementById('chatSendBtn');
     const suggestions = document.getElementById('chatSuggestions');
+
+    // ── Guard: exit if any element missing ──────────────────────────────────
+    if (!bubble || !chatWindow || !closeBtn || !messagesEl || !inputEl || !sendBtn) {
+        console.warn('AI Chat: some elements not found, retrying in 500ms...');
+        setTimeout(initChatWidget, 500);
+        return;
+    }
 
     // ── State ────────────────────────────────────────────────────────────────
     let isOpen = false;
@@ -422,4 +427,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // ── Init ─────────────────────────────────────────────────────────────────
     showWelcome();
 
-});
+} // end initChatWidget
+
+// Run now if elements exist, otherwise wait for full DOM
+if (document.getElementById('aiChatBubble')) {
+    initChatWidget();
+} else {
+    document.addEventListener('DOMContentLoaded', initChatWidget);
+}
