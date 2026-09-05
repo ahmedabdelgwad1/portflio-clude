@@ -4,7 +4,7 @@
 
 // ---- Typewriter Effect ----
 const typewriterEl = document.getElementById('typewriter');
-const roles = ['NLP Engineer', 'AI Developer', 'Deep Learning Enthusiast', 'LLM Specialist', 'Generative AI'];
+const roles = ['AI Engineer', 'Generative AI Specialist', 'Agentic AI Developer', 'RAG Systems Architect', 'Computer Vision Engineer'];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
